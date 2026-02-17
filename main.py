@@ -4,9 +4,9 @@ from pyscript import display, document
 
 #passwords the door will choose for you
 preset_passwords = [
-    "GoGreenGiants@154253",
-    "JibaroisABadGuy@981274981",
-    "YURIII@127938127"
+    "GoGreenGiants@134253",
+    "JibaroisABadGuy@39",
+    "YURIII@127"
 ]
 
 
@@ -115,7 +115,7 @@ def password_verification(e):
         return False
 
     #to operate an extra bit of the code
-    elif '11' in password:
+    elif '11' or '6' or '8' or '0' or '12' in password:
         display('Password is too easy. Do you want a new one?', target='output')
         document.getElementById("passoffer").innerHTML = """
             <button type="button" py-click="new_password" class="btn btn-success btn-sm">Yes</button>
@@ -133,3 +133,4 @@ def account_creation(e):
         display(f'Account created. You may now log in using your credentials.', target='output')
     else:
         display(f'Try again', target='output')
+
