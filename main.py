@@ -33,10 +33,11 @@ def doors(e):
     door_div.setAttribute("data-truth", str(truth_door))
 
     for door in door_numbers:
-        door_div.innerHTML = f"""
+        door_div.innerHTML += f"""
         <img py-click="door_click" data-door="{door}"
              src="door.png"
-             style="width:150px; height:auto; cursor:pointer;">"""
+             style="width:150px; height:auto; cursor:pointer;">
+        """
 
     display("One of these doors tells the truth, the other only lies. Make sure to choose the right one.", target="output")
 
@@ -74,7 +75,7 @@ def username_verification(e):
         return False
 
     elif "123" in username or "chuck" in username or "67" in username or "69" in username:
-        display('This username is taken. Choose a new one.', target='output')
+        display('This username is taken. Choose a new one. This username may contain 67, 69, or 123.', target='output')
         return False
 
     #extra bit for some more rules
@@ -117,7 +118,7 @@ def password_verification(e):
         return False
 
     #to operate an extra bit of the code
-    elif '11' or '8' or '6' or '7' or '9' in password:
+    elif '8' in password or "123" in password or "chuck" in password or "67" in password or "69" in password:
         display('Password is too easy. Do you want a new one?', target='output')
         document.getElementById("passoffer").innerHTML = """
             <button type="button" py-click="new_password" class="btn btn-success btn-sm">Yes</button>
