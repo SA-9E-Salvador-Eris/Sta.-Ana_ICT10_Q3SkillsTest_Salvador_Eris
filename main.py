@@ -6,7 +6,7 @@ from pyscript import display, document
 preset_passwords = [
     "GoGreenGiants@1423412",
     "JibaroisABadGuy@124150555",
-    "YURIII@123124322"
+    "YURIII@12124322"
 ]
 
 
